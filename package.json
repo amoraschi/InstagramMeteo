@@ -1,0 +1,19 @@
+{
+  "name": "sevillameteo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "chart.js": "^4.3.3",
+    "chartjs-node-canvas": "^4.1.6",
+    "dotenv": "^16.3.1",
+    "instagram-private-api": "^1.45.3"
+  }
+}
