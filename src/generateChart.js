@@ -1,9 +1,8 @@
 import { ChartJSNodeCanvas } from 'chartjs-node-canvas'
 
 async function generateChart (hours) {
-  console.log('Config')
   const width = 1080
-  const height = 566
+  const height = 608
   const backgroundColor = 'black'
 
   const config = {
@@ -87,17 +86,14 @@ async function generateChart (hours) {
     }]
   }
 
-  console.log('Callback')
   const chartCallback = (ChartJS) => {
     ChartJS.defaults.maintainAspectRatio = true
     ChartJS.defaults.color = 'white'
     ChartJS.defaults.font.weight = 'bold'
   }
 
-  console.log('New chart')
   const chart = new ChartJSNodeCanvas({ width, height, chartCallback })
 
-  console.log('Render')
   const buffer = chart.renderToBufferSync(config, 'image/jpeg')
 
   return buffer

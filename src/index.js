@@ -22,10 +22,11 @@ async function postDaily () {
 
   console.log('Posting photo')
   const dateString = new Date().toLocaleDateString('es-ES', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })
-  const captionString = `Previsión meteorológica de Sevilla para hoy ${firstCapital(dateString)}\n\n` +
+  const captionString = `⛅ Previsión meteorológica de Sevilla para hoy ${firstCapital(dateString)}\n\n` +
     `🔼 ${weather.temperature.maxcs} ºC | 🔼 ${weather.temperature.mincs} ºC\n\n` +
     `🌅 ${weather.sun.rise} | 🌇 ${weather.sun.set}\n\n` +
-    `🌙 ${traduceLunarPhase(weather.moon.phase)} ${weather.moon.illumination}%`
+    `🌙 ${traduceLunarPhase(weather.moon.phase)} ${weather.moon.illumination}%\n\n` +
+    `#sevilla #meteo #tiempo #seville #weather`
     
   await ig.publish.photo({
     file: chart,
@@ -77,7 +78,7 @@ async function fetchWeather () {
     },
     condition: {
       text: current.condition.text,
-      icon: current.condition.icon
+      icon: `https:${current.condition.icon}`
     },
     sun: {
       rise: astro.sunrise,
@@ -94,7 +95,7 @@ async function fetchWeather () {
         tempft: h.temp_f,
         condition: {
           text: h.condition.text,
-          icon: h.condition.icon
+          icon: `https:${h.condition.icon}`
         },
         wind: {
           kph: h.wind_kph,
