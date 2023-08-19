@@ -11,7 +11,7 @@
   "license": "ISC",
   "type": "module",
   "dependencies": {
-    "chart.js": "^4.3.3",
+    "chart.js": "^3.9.1",
     "chartjs-node-canvas": "^4.1.6",
     "dotenv": "^16.3.1",
     "instagram-private-api": "^1.45.3"
