@@ -23,7 +23,7 @@ async function postDaily () {
   console.log('Posting photo')
   const dateString = new Date().toLocaleDateString('es-ES', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })
   const captionString = `⛅ Previsión meteorológica de Sevilla para hoy ${firstCapital(dateString)}\n\n` +
-    `🔼 ${weather.temperature.maxcs} ºC | 🔼 ${weather.temperature.mincs} ºC\n\n` +
+    `🔼 ${weather.temperature.maxcs} ºC | 🔽 ${weather.temperature.mincs} ºC\n\n` +
     `🌅 ${weather.sun.rise} | 🌇 ${weather.sun.set}\n\n` +
     `🌙 ${traduceLunarPhase(weather.moon.phase)} ${weather.moon.illumination}%\n\n` +
     `#sevilla #meteo #tiempo #seville #weather`
